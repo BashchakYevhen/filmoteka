@@ -1,8 +1,6 @@
+import { saveGenres } from './createMovieCard';
+import { localGenres } from './createMovieCard';
 import listGenres from './genres.json';
-export const saveGenres = localStorage.getItem('genres');
-
-export const localGenres = JSON.parse(saveGenres);
-// https://via.placeholder.com/150
 
 export const createMovieCard = movies => {
   return movies
@@ -13,7 +11,6 @@ export const createMovieCard = movies => {
         name,
         release_date,
         first_air_date,
-        genre_ids,
         id,
         vote_average,
       }) => {
@@ -25,9 +22,8 @@ export const createMovieCard = movies => {
         const date = (release_date || first_air_date)
           ? (release_date || first_air_date)
           : '0000-00-00';
-        let moviesGenresFindName = listGenres.genres
-          .filter(({ id }) => genre_ids.includes(id))
-          .map(({ name }) => name);
+
+        let moviesGenresFindName = listGenres.genres.map(({ name }) => name);
 
         if (moviesGenresFindName.length <= 2) {
           moviesGenres = moviesGenresFindName.join(', ');
@@ -50,9 +46,9 @@ export const createMovieCard = movies => {
           title || name
         }</p>
                         <div class="card__inform" data-id="${id}">
-                            <p class="card__genres" data-id="${id}">${filmGenre}</p>
-                            <p class="card__date" data-id="${id}">
-                              <span></span>| 
+                            <p class="card__genres">${filmGenre}</p>
+                            <p class="card__date">
+                              <span></span>|
                             ${date.slice(0,4)}</p>
                             <span class="card__vote visually-hidden">${voteAverageToString.slice(
                               0,
