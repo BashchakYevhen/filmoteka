@@ -1,5 +1,6 @@
 .button-watched,
 .button-queue {
+    
     width: 130px;
     height: 44px;
     font-size: 12px;
@@ -45,8 +46,10 @@
     }
 }
 
+
 .button-active {
     color: var(--title-color);
     background-color: var(--second-text-color);
     border: none;
 }
+

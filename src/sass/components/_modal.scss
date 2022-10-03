@@ -173,7 +173,9 @@
     }
 }
 
-.button-watched__modal {
+
+.button-watched_modal {
+    padding: 15px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -201,7 +203,10 @@
     }
 }
 
-.button-queue__modal {
+
+.button-queue_modal {
+    padding: 15px;
+
     display: inline-flex;
     align-items: center;
     justify-content: center;
