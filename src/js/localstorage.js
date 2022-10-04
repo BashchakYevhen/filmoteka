@@ -1,5 +1,6 @@
 import { refs } from './refs';
 import { cardObject } from './renderOpenModal';
+
 let watchArr = [];
 let queueArr = [];
 export function checkStorage() {
